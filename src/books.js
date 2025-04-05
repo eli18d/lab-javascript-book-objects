@@ -104,13 +104,35 @@ const dictionary = {
         ["Blink", 287],
     ],
 };
-
+// Iteration 5 viene con catarsis emocional. Perché mi faccio questo? Avrei potuto rilassarmi sabato.
 function booksByAuthor(dictionary) {
-  // Your code here:
+
+  let booksSortedFinal = [];   // THIS ONE STAYS
+  //let authorKeys = []; // no necesito esto pero pensé que si :()
+  //let bookDetails = []; esto no sirve, me devuelve titulo y paginas al mismo tiempo.
+  
+  
+  for (let author in dictionary) {
+   // authorKeys = [], this is useless
+   for (let book of dictionary[author]){
+   //authorKeys = Object.keys(dictionary); this is useless, why did I insist so much on this
+   // bookDetails = [];   me divierte mucho inventar cosas que no necesito.
+      booksSortedFinal.push ({
+      author: author, // me cago en las 10000 veces que recibí undefined por poner idioteces.
+      title: book[0], // despues de probar idioteces como dictionary[author] o BOOK solo o BOOKDETAILS.
+      pages: book[1], // bue... si el anterior es book[0] este era obvio que era book[1]. 5 horas para entenderlo.
+      })
+   }
+      
+    }
+  
+      return booksSortedFinal;  // necesito un cigarrillo. todavia no entiendo porqué funcionó.
+   
+  
+                               
    
 }
 
-// Casi llego ... pero no T_T
 
 
 
